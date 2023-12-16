@@ -6,7 +6,7 @@ import { Checkbox, Radio } from "antd";
 import { Prices } from "../Components/Prices";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../Context/Cart";
-import  toast  from "react-hot-toast";
+import toast from "react-hot-toast";
 import Avatar from "../Components/Avatar";
 
 const HomePage = () => {
@@ -21,7 +21,6 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   //For get all the categories
- 
 
   const handleFilter = (value, id) => {
     let all = [...checked];
@@ -105,7 +104,6 @@ const HomePage = () => {
     <Layout title={"My store"}>
       <div className="row ms-3 mt-4">
         <div className="col-md-2">
-        
           {/* Price Filter */}
           <h4 className="text-center mt-4">Filter By Price</h4>
           <div className="d-flex flex-column">
@@ -129,21 +127,35 @@ const HomePage = () => {
         <div className="col-md-9">
           {/* {JSON.stringify(radio, null, 4)} */}
           <h1 className="text-center">All Products</h1>
-          <div className="d-flex flex-wrap ms-3" style={{border : "0px solid green", margin:"auto", paddingLeft : "30px"}}>
+          <div
+            className="d-flex flex-wrap ms-3"
+            style={{
+              border: "0px solid green",
+              margin: "auto",
+              paddingLeft: "30px",
+            }}
+          >
             {products?.map((ele) => (
-              <div className="card m-2" style={{ width: "18rem",border : "0px solid red", margin : "auto"}}>
+              <div
+                className="card m-2"
+                style={{
+                  width: "18rem",
+                  border: "0px solid red",
+                  margin: "auto",
+                }}
+              >
                 <img
                   src={`https://alive-hare-cape.cyclic.app/api/v1/product/product-photo/${ele._id}`}
                   className="card-img-top"
-                
-       
                 />
                 <div className="card-body">
                   <h5 className="card-title">{ele.name}</h5>
                   <p className="card-text">
                     {ele.description.substring(0, 35)}...
                   </p>
-                  <h5 className="card-text" style={{color:"green"}}>Price : ₹{ele.price}</h5>
+                  <h5 className="card-text" style={{ color: "green" }}>
+                    Price : ₹{ele.price}
+                  </h5>
                   <div className="btn_div">
                     <button
                       className="btn btn-primary ms-1"

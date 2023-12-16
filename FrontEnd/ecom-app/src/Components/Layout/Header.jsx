@@ -7,7 +7,7 @@ import Avatar from "../Avatar";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
-  const [cart] = useCart()
+  const [cart] = useCart();
 
 
   const handleLogout = () => {
@@ -75,7 +75,7 @@ const Header = () => {
                       <li>
                         <NavLink
                           to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
+                            auth?.user?.role === "Manager" ? "admin" : "user"
                           }`}
                           className="dropdown-item"
                           href="#"
@@ -97,7 +97,7 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-                <Badge count="0" showZero>
+                <Badge count={cart?.length}showZero>
                   <NavLink to="/cart" className="nav-link">
                   <Avatar shape="square" size="large" />
                 </NavLink>

@@ -55,18 +55,23 @@ const CartPage = () => {
   useEffect(() => {
     getToken();
   }, [auth?.token]);
+console.log(auth.token)
 
   //FOR HANDLING PAYMENT
   const handlePayment = async () => {
     try {
       setLoading(true);
-    
+
+      const headers = {
+        Authorization: `Bearer ${auth.token}`,
+      };
       const { data } = await axios.post(
-        "https://alive-hare-cape.cyclic.app/api/v1/product/braintree/payment",
+        "https://alive-hare-cape.cyclic.app/api/v1/product/order/orderpost",
         {
-          
-          cart
-        }
+          cart,
+       
+        },
+        { headers } 
       );
       setLoading(false);
       localStorage.removeItem("cart");
@@ -140,12 +145,7 @@ const CartPage = () => {
                 <div className="mb-3">
                   <h4>Current Address</h4>
                   <h5>{auth?.user?.address}</h5>
-                  <button
-                    className="btn btn-outline-warning"
-                    onClick={() => navigate("/dashboard/user/profile")}
-                  >
-                    Update Address
-                  </button>
+                 
                 </div>
               </>
             ) : (
@@ -180,7 +180,7 @@ const CartPage = () => {
                   <button
                     className="btn btn-primary"
                     onClick={handlePayment}
-                    disabled={loading || !instance || !auth?.user?.address}
+                    // disabled={loading || !instance || !auth?.user?.address}
                   >
                     {loading ? "Processing......" : "Make Payment"}
                   </button>
