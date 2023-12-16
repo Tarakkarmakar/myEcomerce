@@ -35,7 +35,7 @@ const CreateProduct = () => {
       productData.append("image", image)
       productData.append("shipping", shipping)
       const {data} = axios.post
-      ('http://localhost:8080/api/v1/product/create-product', productData)
+      ('https://alive-hare-cape.cyclic.app/api/v1/product/create-product', productData)
       if(data?.success){
         toast.error(data?.message)
       }else{
