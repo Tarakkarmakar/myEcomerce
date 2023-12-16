@@ -1,13 +1,65 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  line-height: 25px;
+  text-transform: uppercase;
+  box-shadow: 0px 8px 6px -6px gray;
+  border-bottom: solid gray;
+
 }
+
+.nav-link{
+  font-weight: 300 !important;
+}
+
+.active {
+  border-bottom: 2px solid red;
+}
+.navbar-brand {
+  font-weight: 600;
+  color: rgb(49, 51, 35);
+}
+
+
+/* =================Footer================ */
+
+ .footer{
+  padding: 25px;
+  color: rgb(210, 215, 239);
+  background-color: rgb(50, 25, 150);
+
+ }
+ .footer a {
+  text-decoration: none;
+  color: rgb(210, 215, 239);;
+  font-size: 20px;
+  padding: 10px;
+
+ }
+
+ .footer a:hover {
+     color: bisque;
+     border-bottom: 2px solid red;
+ }
+
+/* ================Page not found======= */
+.pnf{
+  text-align: center;
+  margin-top: 6%;
+}
+.pnfBtn {
+  margin-top: 15px;
+}
+.pnfBtn button {
+  border: 1px solid black;
+  padding: 7px;
+  border-radius: 8px;
+}
+
