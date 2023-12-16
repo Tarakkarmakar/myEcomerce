@@ -11,7 +11,7 @@ import Avatar from "../Components/Avatar";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
   const [total, setTotal] = useState(0);
@@ -22,7 +22,7 @@ const HomePage = () => {
 
   //For get all the categories
  
-  //Filter by category function
+
   const handleFilter = (value, id) => {
     let all = [...checked];
     if (value) {
@@ -74,7 +74,7 @@ const HomePage = () => {
   const getTotalCount = async () => {
     try {
       const { data } = await axios.get(
-        "https://alive-hare-cape.cyclic.app/api/api/v1/product/product-count"
+        "https://alive-hare-cape.cyclic.app/api/v1/product/product-count"
       );
       setTotal(data?.total);
     } catch (err) {
@@ -105,17 +105,7 @@ const HomePage = () => {
     <Layout title={"My store"}>
       <div className="row ms-3 mt-4">
         <div className="col-md-2">
-          <h4 className="text-center">Filter By Category</h4>
-          <div className="d-flex flex-column">
-            {categories?.map((ele) => (
-              <Checkbox
-                key={ele._id}
-                onChange={(e) => handleFilter(e.target.checked, ele._id)}
-              >
-                {ele.name}
-              </Checkbox>
-            ))}
-          </div>
+        
           {/* Price Filter */}
           <h4 className="text-center mt-4">Filter By Price</h4>
           <div className="d-flex flex-column">
@@ -138,7 +128,7 @@ const HomePage = () => {
         </div>
         <div className="col-md-9">
           {/* {JSON.stringify(radio, null, 4)} */}
-          <h1 className="text-center">All Books</h1>
+          <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap ms-3" style={{border : "0px solid green", margin:"auto", paddingLeft : "30px"}}>
             {products?.map((ele) => (
               <div className="card m-2" style={{ width: "18rem",border : "0px solid red", margin : "auto"}}>

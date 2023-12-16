@@ -5,19 +5,5 @@
 }
 .product-link{
     text-decoration: none !important;
-    color: rgb(193, 255, 127);
-}
-
-body{
-    background-color: #ecf69e;
-    background: -webkit-linear-gradient(
-      to right,
-      #ecf69e,
-      rgb(36, 180, 209)
-    );
-    background: linear-gradient(
-      to right,
-      #ecf69e,
-      rgb(36, 180, 209)
-    );
+    color: rgb(39, 46, 30);
 }

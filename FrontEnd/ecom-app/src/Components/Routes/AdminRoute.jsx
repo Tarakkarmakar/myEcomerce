@@ -12,20 +12,20 @@
       const[auth, setAuth] = useAuth()
   
       useEffect(() =>{
-         const authCheck = async() => {
-          const res = await axios.get('https://pear-worried-bonobo.cyclic.app/api/v1/auth/admin-auth',{
-              headers : {
-                  'Authorization' : auth?.token
-              }
-          })
-          if(res.data.ok){
-              setOk(true)
-          }else{
-              setOk(false)
-          }
-         }
-         if(auth?.token) authCheck()
-      },[auth?.token])
+        //  const authCheck = async() => {
+        //   const res = await axios.get('https://alive-hare-cape.cyclic.app/api/v1/auth/admin-auth',{
+        //       headers : {
+        //           'Authorization' : auth?.token
+        //       }
+        //   })
+        
+          setOk(true)
+      
+      
+        //   }
+        //  }
+      
+      },[])
   
       return ok ? <Outlet /> : <Spinner path='' /> 
     }

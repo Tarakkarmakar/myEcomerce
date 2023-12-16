@@ -12,7 +12,7 @@ const Orders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "https://alive-hare-cape.cyclic.app/api/api/v1/auth/orders"
+        "https://alive-hare-cape.cyclic.app/api/v1/auth/orders"
       );
       setOrders(data);
     } catch (err) {
@@ -62,7 +62,7 @@ const Orders = () => {
                       <div className="row mb-2 p-3 card flex-row" key={ele._id}>
                         <div className="col-md-4">
                           <img
-                            src={`https://alive-hare-cape.cyclic.app/api/api/v1/product/product-photo/${ele._id}`}
+                            src={`https://alive-hare-cape.cyclic.app/api/v1/product/product-photo/${ele._id}`}
                             className="card-img-top"
                             alt={ele.name}
                             width="100px"

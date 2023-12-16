@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Products = () => {
   const [product, setProduct] = useState([]);
-  const [products, setProducts] = useState([]);
+ 
 
   //Getting all products
   const getAllProducts = async () => {
@@ -35,7 +35,7 @@ const Products = () => {
           <AdminMenu />
         </div>
         <div className="col-md-9">
-          <h1 className="text-center" style={{ marginTop : "10px"}}>All Books Collection</h1>
+          <h1 className="text-center" style={{ marginTop : "10px"}}>All Products</h1>
           <div className="d-flex flex-wrap">
             {product?.map((ele) => (
               <Link 
@@ -45,7 +45,7 @@ const Products = () => {
               >
                 <div className="card m-2" style={{ width: "18rem"}}>
                   <img
-                    src={`https://alive-hare-cape.cyclic.app/api/api/v1/product/product-photo/${ele._id}`}
+                    src={`https://alive-hare-cape.cyclic.app/api/v1/product/product-photo/${ele._id}`}
                     className="card-img-top"
                     alt={ele.name}
                     // style={{width : '70%'}}
@@ -53,6 +53,7 @@ const Products = () => {
                   <div className="card-body">
                     <h5 className="card-title">{ele.name}</h5>
                     <p className="card-text">{ele.description}</p>
+                    <p className="card-text">{ele.weight}KG</p>
                   </div>
                 </div>
               </Link>

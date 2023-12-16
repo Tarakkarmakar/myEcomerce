@@ -62,7 +62,7 @@ const CartPage = () => {
       setLoading(true);
     
       const { data } = await axios.post(
-        "https://pear-worried-bonobo.cyclic.app/api/v1/product/braintree/payment",
+        "https://alive-hare-cape.cyclic.app/api/v1/product/braintree/payment",
         {
           
           cart
@@ -104,7 +104,7 @@ const CartPage = () => {
                 <div className="row mb-2 p-3 card flex-row" key={ele._id}>
                   <div className="col-md-4 mt-2 mb-2">
                     <img
-                      src={`https://pear-worried-bonobo.cyclic.app/api/v1/product/product-photo/${ele._id}`}
+                      src={`https://alive-hare-cape.cyclic.app/api/v1/product/product-photo/${ele._id}`}
                       className="card-img-top"
                       alt={ele.name}
                       width="100px"

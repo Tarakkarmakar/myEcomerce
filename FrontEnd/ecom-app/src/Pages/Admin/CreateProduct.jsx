@@ -20,21 +20,7 @@ const CreateProduct = () => {
 
   const navigate = useNavigate()
 
-  //GETTING ALL CATEGORIES
-  const getAllCategory = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://alive-hare-cape.cyclic.app/api/v1/category/get-category"
-      );
-     
-    } catch (err) {
-      console.log(err);
-      toast.error("Something went Wrong for getting categories");
-    }
-  };
-  useEffect(() => {
-    getAllCategory();
-  }, []);
+
 
   //FOR CREATING PRODUCT
   const handleCreate = async(e) => {
@@ -47,8 +33,9 @@ const CreateProduct = () => {
       productData.append("price", price)
       productData.append("quantity", quantity)
       productData.append("image", image)
-      
-      const {data} = axios.post('https://alive-hare-cape.cyclic.app/api/v1/product/create-product', productData)
+      productData.append("shipping", shipping)
+      const {data} = axios.post
+      ('http://localhost:8080/api/v1/product/create-product', productData)
       if(data?.success){
         toast.error(data?.message)
       }else{
@@ -109,7 +96,7 @@ const CreateProduct = () => {
                 <input
                   type="text"
                   value={weight}
-                  placeholder="Write Author Name Here"
+                  placeholder="weight"
                   className="form-control"
                   onChange={(e) => setWeight(e.target.value)}
                 />

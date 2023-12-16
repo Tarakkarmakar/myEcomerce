@@ -17,7 +17,7 @@ import '../../Style/login.css';
     const handleSubmit= async(e)=>{
         e.preventDefault()
         try{
-            const res = await axios.post("https://alive-hare-cape.cyclic.app/api/api/v1/auth/forgot-password", 
+            const res = await axios.post("https://alive-hare-cape.cyclic.app/api/v1/auth/forgot-password", 
             {email,
              newpassword,
              answer,
@@ -38,7 +38,7 @@ import '../../Style/login.css';
     }
 
     return (
-       <Layout title={'Forgot-Password - Book Store App'}>
+       <Layout title={'Forgot-Password -My store'}>
             <div className="lgform-container">
           <form onSubmit={handleSubmit}>
           <h3 className='title'>Reset Password</h3>

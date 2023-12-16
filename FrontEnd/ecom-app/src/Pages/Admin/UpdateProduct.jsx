@@ -55,7 +55,7 @@ const UpdateProduct = () => {
       image && productData.append("image", image);
 
       const { data } = axios.put(
-        `https://alive-hare-cape.cyclic.app/v1/product/update-product/${id}`,
+        `https://alive-hare-cape.cyclic.app/api/v1/product/update-product/${id}`,
         productData
       );
       if (data?.success) {
@@ -75,7 +75,7 @@ const UpdateProduct = () => {
       let answer = window.prompt("Are You Sure want to delete this Product?");
       if (!answer) return;
       const { data } = await axios.delete(
-        `https://alive-hare-cape.cyclic.app/api/api/v1/product/delete-product/${id}`
+        `https://alive-hare-cape.cyclic.app/api/v1/product/delete-product/${id}`
       );
       toast.success("Product has been deleted");
       navigate("/dashboard/admin/products");
@@ -120,7 +120,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`https://alive-hare-cape.cyclic.app/api/api/v1/product/product-photo/${id}`}
+                      src={`https://alive-hare-cape.cyclic.app/api/v1/product/product-photo/${id}`}
                       alt="product-image"
                       height={"200px"}
                       className="img img-responsive"

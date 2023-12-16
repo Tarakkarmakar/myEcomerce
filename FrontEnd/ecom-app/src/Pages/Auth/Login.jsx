@@ -17,7 +17,7 @@
     const handleSubmit= async(e)=>{
         e.preventDefault()
         try{
-            const res = await axios.post("hhttps://alive-hare-cape.cyclic.app/api/api/v1/auth/login", 
+            const res = await axios.post("https://alive-hare-cape.cyclic.app/api/v1/auth/login", 
             {email, password}
             );
             if(res && res.data.success){
@@ -41,7 +41,7 @@
         }
     }
     return (
-        <Layout title={"Login - Book Store App"}>
+        <Layout title={"Login-My store"}>
         <div className="lgform-container">
           <form onSubmit={handleSubmit}>
           <h3 className='title'>Login Form</h3>

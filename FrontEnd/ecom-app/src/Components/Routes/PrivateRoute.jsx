@@ -11,7 +11,7 @@ import Spinner from '../Spinner'
 
     useEffect(() =>{
        const authCheck = async() => {
-        const res = await axios.get('https://pear-worried-bonobo.cyclic.app/api/v1/auth/user-auth',{
+        const res = await axios.get('https://alive-hare-cape.cyclic.app/api/v1/auth/user-auth',{
             headers : {
                 'Authorization' : auth?.token
             }
